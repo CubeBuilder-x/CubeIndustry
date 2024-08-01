@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CubeIndustry</title>
+  <link rel="icon" type="image/x-icon" href="icon.ico">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      background-color: #E5E3DD;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      background-color: #848484;
+      border-bottom: 4px solid #7D7D7D;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .Zahnräder {
+      width: 75px;
+      height: 75px;
+      cursor: pointer;
+      animation: rotate 3s linear forwards;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .Überschrift {
+      color: #fff;
+      font-family: sans-serif, Arial, Helvetica;
+      margin-left: 20px;
+    }
+
+    .CI {
+      width: 75px;
+      height: 75px;
+      border: 2px solid #7D7D7D;
+    }
+
+    .Verlinkungen a {
+      color: #fff;
+      border: 1px solid #fff;
+      text-decoration: none;
+      margin: 5px;
+      padding: 15px;
+      padding-right: 20px;
+      padding-left: 20px;
+      font-size: 15px;
+      font-family: sans-serif, Arial, Helvetica;
+    }
+
+    .ÜU {
+      background-color: #4A8152;
+    }
+
+    .Kn {
+      background-color: #4C568F;
+    }
+
+    .Nw {
+      background-color: #AE3A3A;
+    }
+
+    .Dl {
+      background-color: #D7A535;
+    }
+
+    .FAQ {
+      background-color: #AB5DC4;
+    }
+
+    /* Startseite */
+    .StartseitenBild {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Texte */
+    .Text-Überschrift {
+      color: #000;
+      font-family: sans-serif, Arial, Helvetica;
+      margin-left: 10%;
+      margin-top: 10%;
+    }
+
+    .Text-Überschrift-2 {
+      color: #000;
+      font-family: sans-serif, Arial, Helvetica;
+      margin-left: 10%;
+    }
+
+    .Text {
+      color: #000;
+      font-family: sans-serif, Arial, Helvetica;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    /* Kontakt-Container */
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .contact-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .contact-info {
+      margin: 20px 0;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-info p img {
+      margin-right: 10px;
+    }
+
+    .contact-info a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Timer-Stil */
+    #timer-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #timer-table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 24px;
+    }
+
+    #timer-table th,
+    #timer-table td {
+      border: 2px solid #000;
+      padding: 10px;
+    }
+
+    #timer-table th {
+      background-color: #EA5251;
+      color: #fff;
+    }
+
+    .Event-Überschrift {
+      color: #000;
+      font-family: sans-serif, Arial, Helvetica;
+      text-align: center;
+    }
+
+    .Bilder {
+      width: 400px;
+      height: 400px;
+      margin-left: 10%;
+    }
+
+    .Verlinkung {
+      color: #0000ee;
+      text-decoration: none;
+      font-family: sans-serif, Arial, Helvetica;
+    }
+    footer{
+      position: relative;
+      padding: 4em;
+      background-color: #848484;
+      border-top: 4px solid #7D7D7D;
+      margin-top: 75px;
+      margin: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hidden{
+  display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="left">
+      <img src="Zahnrad.png" alt="img" class="Zahnräder" onclick="location.reload();">
+      <h1 class="Überschrift">CubeIndustry</h1>
+    </div>
+    <br>
+    <div class="Verlinkungen">
+      <a href="#" class="ÜU" data-content="content-ueber-uns">Über Uns</a>
+      <a href="#" class="Kn" data-content="content-kontakt">Kontakt</a>
+      <a href="#" class="Nw" data-content="content-news">Events</a>
+      <a href="#" class="Dl" data-content="content-dienstleistungen">Dienstleistungen</a>
+      <a href="#" class="FAQ" data-content="content-faq">FAQ</a>
+    </div>
+    <img src="icon.png" alt="CubeIndustry" class="CI">
+  </header>
+  <!-- Startseiten Bild -->
+  <div id="content">
+    <img src="Land.png" alt="Bild" class="StartseitenBild">
+    <br>
+    <!-- Startseite -->
+    <h1 class="Text-Überschrift">CubeIndustry</h1>
+    <br>
+    <h2 class="Text-Überschrift-2">Herzlich Willkommen</h2>
+    <p class="Text">Als eine kleine, gegenüber anderen offene Community sind wir glücklich Sie hier begrüßen zu dürfen. Circa im Januar 2024 gegründet, fungiert die Firma CubeIndustry auf dem Minecraft-Server Minevale.de als Organisation, die Dienstleistungen wie z. B. das Aushöhlen von Plots, das bauen von komplizierten Redstone-Mechanismen, etc. übernimmt. (Weitere Informationen unter Dienstleistungen) Unsere Mitarbeiter sind Ihnen jederzeit zu Verfügung und helfen Ihnen bei Problemen jeder Art.<br>
+      <br> CubeBuilder</p>
+  </div>
+  <!-- Über Uns -->
+  <div id="content-ueber-uns" class="hidden">
+    <h1 class="Text-Überschrift">Über Uns</h1>
+    <hr>
+    <h2 class="Text">Mitglieder</h2>
+    <img src="#" alt="#" class="Bilder">
+    <p class="Text">Wenn auch noch ganz frisch im Team, freundliche und hilfsbereite Spieler. just_a_dreamer, Greetar1*</p>
+    <hr>
+    <h2 class="Text">Supporter</h2>
+    <img src="#" alt="#" class="Bilder">
+    <p class="Text">Zum helfen geboren. Zusammen als Team fungieren sie wie eine Maschine. Raffi, Logio</p>
+    <hr>
+    <h2 class="Text">Moderator</h2>
+    <img src="Mod.png" alt="Moderator" class="Bilder">
+    <p class="Text">Seit langem dabei und jederzeit hilfsbereit. Rysext</p>
+    <hr>
+    <h2 class="Text">Admins</h2>
+    <img src="#" alt="#" class="Bilder">
+    <p class="Text">Wenn auch nicht so oft gesehen eine Person mit Herz. Astoria ♥</p>
+    <hr>
+    <h2 class="Text">Owner</h2>
+    <img src="Owner.png" alt="Owner" class="Bilder">
+    <p class="Text">Von Grund auf dabei und begarbter Redstone-Spezialist. CubeBuilder</p>
+    <hr>
+    <h2 class="Text">Team Cube</h2>
+    <img src="Team-Cube.png" alt="Team-Cube" class="Bilder">
+    <p class="Text">Eine Gruppe von Personen die meist täglich zusammen spielen und sich gegenseitig bei ihren Projekten ergänzen. Raffi, Logio, CubeBuilder, Rysext</p>
+
+  </div>
+  <!-- Kontakt -->
+  <div id="content-kontakt" class="hidden">
+    <h1 class="Text-Überschrift">Kontakt</h1>
+    <!-- Kontakt-Container -->
+    <div class="contact-container">
+      <!-- Erster Container -->
+      <div class="contact-group">
+        <div class="contact-card">
+          <h2>Kontaktinformationen</h2>
+          <div class="contact-info">
+            <p>CubeBuilder (Owner)</p>
+            <p><a href="mailto:CubeBuilder@web.de">CubeBuilder@web.de</a></p>
+          </div>
+        </div>
+      </div>
+      <!-- Zweiter Container -->
+      <div class="contact-group">
+        <div class="contact-card">
+          <h2>Discord</h2>
+          <div class="contact-info">
+            <p>CubeIndustry</p>
+            <p><a href="https://discord.gg/K5JYHb3Tqf">https://discord.gg/K5JYHb3Tqf</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Events -->
+  <div id="content-news" class="hidden">
+    <center>
+    <h1 class="Event-Überschrift">Events</h1>
+    <p class="Text">Hier ist der Countdown-Timer für das nächste Event: __________</p>
+    </center>
+    <div id="timer-container">
+      <table id="timer-table">
+        <thead>
+          <tr>
+            <th>D</th>
+            <th>H</th>
+            <th>M</th>
+            <th>S</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="days">00</td>
+            <td id="hours">00</td>
+            <td id="minutes">00</td>
+            <td id="seconds">00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  <!-- Dienstleistungen -->
+  <div id="content-dienstleistungen" class="hidden">
+    <h1 class="Text-Überschrift">Dienstleistungen</h1>
+    <p class="Text"><strong>Farmplots</strong><br>Habt ihr euch noch nie ein Plot gewünscht, auf dem ihr alle Farmen übersichtlich sortiert habt und um etwas zu holen einfach nur ins lager müsst und euch alles nehmen könnt? Wir machen euch e in komplett ausgehöhltes plot mir allen Farmen drauf und einem übersichtlichen, automatischem Lager. <br>
+      <br>
+    Farmen:<br>
+    •Bambus<br>
+    •Zuckerrohr<br>
+    •Kaktus<br>
+    •Melonen<br>
+    •Kürbis<br>
+    •Eier<br>
+    •Sniffer<br>
+    •Seetang<br>
+    •Pilze (rot und braun)<br>
+    •Cobblestone<br>
+    <br>
+    Preis:<br>
+    1 Millionen +-500k </p>
+    <hr>
+   <p class="Text"> <strong>Aushöhlen von Plots</strong><br>
+    Ihr braucht Platz, aber wollt nicht über 16.000 Blöcke abbauen? Wir sind *extra darauf spezialisiert* Plots in kürzester Zeit auszuhöhlen und euch große Mühen zu ersparen.<br>
+    <br>
+    Preis:<br>
+    500k pro Plot</p>
+    <hr>
+  <p class="Text">  <strong>Redstonemechanismen</strong><br>
+    Wie viele kennt ihr euch nicht mit Redstone aus? Kein Problem! Die Redstoneexperten in unserem Team schaffen das mit leichtigkeit. Lager, Türen, Casinos und vieles mehr ist nun kein Problem mehr.<br>
+    <br>
+    Preis:<br>
+    Abhängig vom Mechanismus</p>
+    <hr>
+    <p class="Text">
+<strong>Karten</strong><br>
+    Ihr wollt eine eigene Karte, die zu euch passt, eine koplett neue die es noch nirgendwo gibt? Wir sind immer dazu bereit für euch Karten zu bauen.<br>
+    <br>
+    Preis:<br>
+    500k pro Karte (128x128 Blöcke)</p>
+  </div>
+  <!-- FAQ -->
+  <div id="content-faq" class="hidden">
+    <h1 class="Text-Überschrift">FAQ</h1><p class="Text">(Frequently Asked Questions (=häufig gestellte Fragen))</p>
+    <br>
+    <h2 class="Text-Überschrift-2">Wie komme ich in euren Clan?</h2>
+    <p class="Text">Erstelle ein Ticket auf unserem <a href="https://discord.gg/K5JYHb3Tqf" class="Verlinkung">Discord Server</a>. Schreibe deine Bewerbung oder frage nach einem mündlichem Bewerbungsgespräch.</p>
+    <hr>
+    <h2 class="Text-Überschrift-2">Kann ich free stuff haben?</h2>
+    <p class="Text">Nö</p>
+  </div>
+  <footer>
+      <table style="width: 100%;">
+          <tr>
+              <!-- 1. Spalte -->
+              <td style="background-color: #fff; border: none; border-radius: 7px; text-align: center; padding: 10px; margin-right: 10px;">
+                <img src="Minevale.de.png" width="100px" height="50px">
+                  <p style="color: #000; font-family: sans-serif, Aria, Helevetica">Server-ID für Java</p>
+                  <p style="color: blue; font-family: sans-serif, Aria, Helevetica">minevale.de</p>
+                  <p style="color: #000; font-family: sans-serif, Aria, Helevetica">Server-ID für Bedrock</p>
+                  <p style="color: blue; font-family: sans-serif, Aria, Helevetica">pe.minevale.de</p> 
+              </td>
+              <!-- 2. Spalte -->
+              <td style="background-color: #fff; border: none; border-radius: 7px; text-align: center; padding: 10px; margin-right: 10px; margin-left: 10px;">
+                <img src="E-Mail.png" width="40px" height="40px">
+                  <p style="color: #000; font-family: sans-serif, Aria, Helevetica">E-Mail Adresse</p>
+                  <p><a href="mailto:CubeBuilder@web.de" style="color: blue; font-family: sans-serif, Aria, Helevetica">CubeBuilder@web.de</a></p>
+                <img src="Discord.png" height="25px" width="100px">
+                <p><a style="color: blue; font-family: sans-serif, Aria, Helevetica" href="https://discord.gg/K5JYHb3Tqf">https://discord.gg/K5JYHb3Tqf</a></p>
+              </td>
+              <!-- 3. Spalte -->
+              <td style="background-color: #fff; border: none; border-radius: 7px; text-align: center; padding: 10px; margin-left: 10px;">
+                <img src="Twitch.png" height="50px" width="100px">
+                  <p> <a style="color: blue; font-family: sans-serif, Aria, Helevetica" href="https://www.twitch.tv/cubebuilder_live">https://www.twitch.tv/cubebuilder:live</a></p>
+                  <img src="YouTube.png" height="30px" width="100px">
+                  <p> <a style="color: blue; font-family: sans-serif, Aria, Helevetica" href="https://www.youtube.de/@CubeBuilder">https://www.youtube.de/@CubeBuilder</a></p>
+              </td>
+          </tr>
+      </table>
+  </footer>
+  <script>
+    // Seiten-Verlinkungen //
+    document.querySelectorAll('.Verlinkungen a').forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('content').style.display = 'none';
+        document.querySelectorAll('.hidden').forEach(section => {
+          section.style.display = 'none';
+        });
+        const contentId = event.target.getAttribute('data-content');
+        document.getElementById(contentId).style.display = 'block';
+      });
+    });
+
+    const eventDate = new Date('0000-00-00T00:00:00');
+
+    function startAlarm() {
+      const countdown = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = eventDate.getTime() - now;
+
+        if (distance < 0) {
+          clearInterval(countdown);
+          document.getElementById('days').textContent = "00";
+          document.getElementById('hours').textContent = "00";
+          document.getElementById('minutes').textContent = "00";
+          document.getElementById('seconds').textContent = "00";
+          alert("Wecker Zeit erreicht!");
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = ('0' + days).slice(-2);
+        document.getElementById('hours').textContent = ('0' + hours).slice(-2);
+        document.getElementById('minutes').textContent = ('0' + minutes).slice(-2);
+        document.getElementById('seconds').textContent = ('0' + seconds).slice(-2);
+      }, 1000);
+    }
+
+    // Starte den Timer, sobald die Seite geladen ist
+    window.onload = function() {
+      startAlarm();
+    };
+  </script>
+</body>
+
+</html>
